@@ -1,20 +1,17 @@
 <?php
-
-/*
-|--------------------------------------------------------------------------
-| Routes File
-|--------------------------------------------------------------------------
-|
-| Here is where you will register all of the routes in an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
-Route::get('/', function () {
-    return view('welcome');
+/**
+ * 首页
+ */
+Route::group(['middleware' => ['web'],'namespace'=>'Index'],function () {
+    Route::get('/', 'IndexController@index');   //登录首页
+    Route::post('login', 'IndexController@login');   //登陆
 });
-
+Route::group(['middleware' => ['web','login'],'prefix'=>'','namespace'=>'Index'], function () {
+    Route::get('first','IndexController@first'); // 首页
+    Route::get('quit','IndexController@quit'); // 退出
+    Route::any('info','IndexController@info'); // 个人票数信息
+    Route::any('list','NoteController@notelist'); //投票列表
+});
 /*
 |--------------------------------------------------------------------------
 | Application Routes
