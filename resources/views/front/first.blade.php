@@ -232,7 +232,7 @@
 </div>
 <div class="top2">
     <div class="logo">
- <h1>口吐真言投票系统</h1><p>  剩余票数: <span style="color: #990000" id="count"></span>票 已投票数：<span style="color: #990000" id="alreadey_count"></span>票</p>
+ <h1>口吐真言投票系统：</h1><p>  剩余票数: <span style="color: #990000" id="count"></span>票 已投票数：<span style="color: #990000" id="alreadey_count"></span>票</p>
     </div>
     <div class="fr top-link">
         <a href="#" target="mainCont" title="DeathGhost"><i
@@ -270,7 +270,7 @@
             style="border: 0px solid #CCC; margin: 0; padding: 0;"></iframe>
 </div>
 
-
+阿斯顿
 
 
 

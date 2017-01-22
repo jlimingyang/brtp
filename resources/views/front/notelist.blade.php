@@ -48,27 +48,27 @@
         <th>姓名</th>
         <th>描述</th>
         <th>创建时间</th>
-        @foreach($data[0]['note'] as $k=>$v)
-            <th>{{$v['choosename']}}</th>
+        @foreach($chooseList as $k=>$v)
+            <th>{{$v->choosename}}</th>
         @endforeach
         <th>投票选项</th>
     </tr>
     </thead>
-    @foreach($data as $k=>$v)
+    @foreach($arr as $k=>$v)
         <center>
     <tr>
-        <td>{{$v['realname']}}</td>
-        <td>{{$v['meta']}}</td>
-        <td>{{$v['c_time']}}</td>
-        @foreach($v['note'] as $k=>$u)
-            <td>{{$u['count']}}票</td>
-        @endforeach
+        <td>{{$v->realname}}</td>
+        <td>{{$v->meta}}</td>
+        <td>{{$v->c_time}}</td>
+        @foreach($data[$k] as $a=>$b)
+            <td>{{$b['count']}}票</td>
+            @endforeach
         <td><a href="placardEdit.html">投票</a></td>
     </tr>
         </center>
         @endforeach
 </table>
-{{--<div class="ok"><center>{!!$data->render() !!}</center></div>--}}
+<div class="ok"><center>{!!$arr->render() !!}</center></div>
 </body>
 </html>
 <script src="{{asset('js/jquery.min.js')}}"></script>

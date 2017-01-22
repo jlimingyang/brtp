@@ -44,7 +44,7 @@ class User extends Model
      */
     public function userList()
     {
-        $arr = $this->where('id','!=',session('userid'))->orderBy('id','asc')->paginate(15);
+        $arr = $this->where('id','!=',session('userid'))->orderBy('id','asc')->paginate(1);
         return $arr;
     }
 }
