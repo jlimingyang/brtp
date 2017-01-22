@@ -34,4 +34,24 @@ class NoteController extends Controller
         }
        return view('front.notelist',compact('chooseList','arr','data'));
    }
+   /**
+    * 投票人by realname
+    */
+   public function getNote()
+   {
+       $input = Input::all();
+       $rules =[
+           'realname'=>'required|between:1,36',
+       ];
+
+       $message = [
+           'realname.required'=>'姓名不能为空！',
+           'realname.between'=>'用户名不规范!',
+       ];
+       $validator = Validator::make($input,$rules,$message);
+       if(!$validator->passes())
+       {
+           return back()->withErrors($validator);
+       }
+   }
 }

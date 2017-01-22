@@ -37,9 +37,9 @@
     </style>
 </head>
 <body><br><br>
-<form class="form-inline definewidth m20" action="#" method="get">
+<form class="form-inline definewidth m20" action="getNote" method="">
     <font color="#33ccff"><strong>查询：</strong></font>
-    <input type="text" name="menuname" id="menuname"class="abc input-default" placeholder="" value="">&nbsp;&nbsp;
+    <input type="text" name="realname" id="menuname"class="abc input-default" placeholder="输入真实姓名！"  value="">&nbsp;&nbsp;
     <button type="submit" class="btn btn-primary">查询</button>
 </form>
 <table class="table table-bordered table-hover definewidth m10">

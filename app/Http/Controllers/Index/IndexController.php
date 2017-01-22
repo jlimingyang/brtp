@@ -33,7 +33,7 @@ class IndexController extends Controller
                 'username.required'=>'用户名不能为空！',
                 'username.between'=>'用户名不规范!',
                 'userpass.required'=>'密码不能为空！',
-                'userpass.between'=>'请输入6到36位密码！',
+                'userpass.between'=>'请输入:min到:max位密码！',
                 'userpass.alpha_dash'=>'密码不规范！',
             ];
             $validator = Validator::make($input,$rules,$message);
