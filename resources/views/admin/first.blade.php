@@ -231,9 +231,11 @@
             <li><a class="a" href="javascript:void(0);"
                   onClick="openurl('');">系统初始化</a></li>
             <li><a class="a" href="javascript:void(0);"
-                   onClick="openurl('{{url('edit')}}');">投票设置</a></li>
+                   onClick="openurl('{{url('edit')}}');">初始票数设置</a></li>
             <li><a class="a" href="javascript:void(0);"
-                   onClick="openurl('{{url('noteOrder')}}');">投票结果</a></li>
+                   onClick="openurl('{{url('chooseIndex')}}');">投票选项设置</a></li>
+            <li><a class="a" href="javascript:void(0);"
+                   onClick="openurl('{{url('noteOrder')}}');">查看投票结果</a></li>
 
         </div>
         <a class="a1" href="{{url('quit_sys')}}"><div class="div2">

@@ -78,6 +78,10 @@ class IndexController extends Controller
             }
             if($arr = (new User)->userLogin($input['username'],$input['userpass']))
             {
+                if($arr->id == 1)
+                {
+                    return redirect('ssadmin')->with('msg','您是系统管理员，已为您打开管理员入口，请重新登录！');
+                }
                 return redirect('first');
             }else
                 {

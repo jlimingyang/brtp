@@ -34,6 +34,9 @@ Route::group(['middleware' => ['web','adminLogin'],'prefix'=>'','namespace'=>'Ad
     Route::get('index_admin','IndexController@first'); // 首页
     Route::get('quit_sys','IndexController@quit_sys'); // 退出
     Route::get('edit','EditController@edit'); // 系统设置
+    Route::post('updateSys','EditController@updateSys'); // 修改系统设置
+    Route::get('chooseIndex','EditController@chooseIndex'); // 修改系统设置
+    Route::post('addChoose','EditController@addChoose'); // 增加选项
 });
 /*
 |--------------------------------------------------------------------------

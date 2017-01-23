@@ -17,8 +17,28 @@ class Choose extends Model
    */
     public function chooseList()
     {
-        $arr = $this->get();
+        $arr = $this->orderBy('id','desc')->get();
         return $arr;
+    }
+    /**
+     * 增加选项
+     */
+    public function addChoose($choosename)
+    {
+        $data['choosename'] = $choosename;
+        $data['choosemeta'] = ' ';
+        $data['c_time'] = date('Y-m-d H:i:s',time());
+        $req = $this->insertGetId($data);
+        return $req;
+    }
+    /**
+     * 删除选项
+     */
+    public function delChoose($id)
+    {
+        $where['id'] = $id;
+        $sta = $this->where($where)->delete();
+        return $sta;
     }
 }
 

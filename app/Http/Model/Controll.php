@@ -20,5 +20,18 @@ class Controll extends Model
         $arr = $this->first(['count_contr']);
         return $arr->count_contr;
     }
+    /**
+     * 修改设置
+     */
+    public function updateControll($num)
+    {
+        $where['id'] = 1;
+        $data['count_contr'] = $num;
+//        $data['time_start'] = $time_start;
+//        $data['time_end'] = $time_end;
+        $data['m_time'] = date('Y-m-d H:i:s',time());
+        $sta = $this->where($where)->update($data);
+        return $sta;
+    }
 }
 
