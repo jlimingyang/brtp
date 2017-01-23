@@ -4,14 +4,13 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class UserLogin
+class AdminLogin
 {
     public function handle($request, Closure $next)
     {
-        if(!session('userid')){
-            return redirect('/');
+        if(session('userid' != 1)){
+            return redirect('ssadmin');
         }
-
         return $next($request);
     }
 }

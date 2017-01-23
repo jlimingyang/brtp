@@ -15,7 +15,7 @@
 <div class="wrapper">
 
     <div class="container">
-        <h1>口吐真言投票系统</h1>
+        <h1>系统管理员登陆</h1>
         <span style="color:red">
                     @if(count($errors)>0)
                 <div class="">
@@ -31,12 +31,11 @@
             @if(!empty(session('msg')))
                 {{session('msg')}}
             @endif</span>
-        <form class="form" action="{{url('login')}}" method="post">
+        <form class="form" action="{{url('login_admin')}}" method="post">
             {{csrf_field()}}
             <input type="text" name="username" placeholder="账号">
             <input type="password" name="userpass" placeholder="密码"><br>
             <button type="submit"><strong>登陆</strong></button><br><br>
-            <a href="{{url('regist')}}"><strong>内部注册通道</strong></a>
         </form>
     </div>
 

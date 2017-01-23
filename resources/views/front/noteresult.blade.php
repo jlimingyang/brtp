@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>竞票人列表</title>
+    <title>竞票结果</title>
     <meta charset="UTF-8">
     <meta name="description" content="Creating Modal Window with Twitter Bootstrap">
     <link href="" rel="stylesheet">
@@ -37,54 +37,32 @@
     </style>
 </head>
 <body><br><br>
-<form class="form-inline definewidth m20" action="getNote" method="post">
-    {{csrf_field()}}
-    <font color="#33ccff"><strong>查询：</strong></font>
-    <input type="text" name="realname" id="menuname"class="abc input-default" placeholder="输入真实姓名！"  value="">&nbsp;&nbsp;
-    <button type="submit" class="btn btn-primary">查询</button>
-</form>
-<span style="color:red">
-                    @if(count($errors)>0)
-        <div class="">
-                      @if(is_object($errors))
-                @foreach($errors->all() as $error)
-                    <p>{{$error}}</p>
-                @endforeach
-            @else
-                <p>{{$errors}}</p>
-            @endif
-                          </div>
-    @endif
-    @if(!empty(session('msg')))
-        {{session('msg')}}
-    @endif</span><br>
 <table class="table table-bordered table-hover definewidth m10">
     <thead>
     <tr>
+        <th>名次</th>
         <th>姓名</th>
-        <th>描述</th>
-        <th>创建时间</th>
-        @foreach($chooseList as $k=>$v)
-            <th>{{$v->choosename}}</th>
-        @endforeach
-        <th>投票选项</th>
+        <th>获票详情</th>
+        <th>总共获票</th>
+        <th>排序</th>
     </tr>
     </thead>
-    @foreach($arr as $k=>$v)
+    @foreach($arry as $k=>$v)
         <center>
     <tr>
-        <td>{{$v->realname}}</td>
-        <td>{{$v->meta}}</td>
-        <td>{{$v->c_time}}</td>
-        @foreach($data[$k] as $a=>$b)
-            <td>{{$b['count']}}票</td>
-            @endforeach
-        <td><a href="{{url('note')}}?id={{$v->id}}">投票</a></td>
+        <td>{{$k+1}}</td>
+        <td>{{$v['realname']}}</td>
+        <td>
+            @foreach($arry[$k]['p'] as $a=>$b)
+                {{$b['choosename']}}:{{$b['count']}}票
+             @endforeach</td>
+        <td>{{$v['total']}}票</td>
+            <td>↑</td>
     </tr>
         </center>
         @endforeach
 </table>
-<div class="ok"><center>{!!$arr->render() !!}</center></div>
+{{--<div class="ok"><center>{!!$arry->render() !!}</center></div>--}}
 </body>
 </html>
 <script src="{{asset('js/jquery.min.js')}}"></script>

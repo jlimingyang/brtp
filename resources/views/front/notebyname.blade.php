@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>竞票人列表</title>
+    <title>竞票人</title>
     <meta charset="UTF-8">
     <meta name="description" content="Creating Modal Window with Twitter Bootstrap">
     <link href="" rel="stylesheet">
@@ -70,21 +70,18 @@
         <th>投票选项</th>
     </tr>
     </thead>
-    @foreach($arr as $k=>$v)
         <center>
     <tr>
-        <td>{{$v->realname}}</td>
-        <td>{{$v->meta}}</td>
-        <td>{{$v->c_time}}</td>
-        @foreach($data[$k] as $a=>$b)
+        <td>{{$arr->realname}}</td>
+        <td>{{$arr->meta}}</td>
+        <td>{{$arr->c_time}}</td>
+        @foreach($data as $a=>$b)
             <td>{{$b['count']}}票</td>
-            @endforeach
-        <td><a href="{{url('note')}}?id={{$v->id}}">投票</a></td>
+        @endforeach
+        <td><a href="placardEdit.html">投票</a></td>
     </tr>
         </center>
-        @endforeach
 </table>
-<div class="ok"><center>{!!$arr->render() !!}</center></div>
 </body>
 </html>
 <script src="{{asset('js/jquery.min.js')}}"></script>

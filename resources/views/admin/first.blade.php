@@ -201,50 +201,19 @@
             font-size: 18px;
         }
     </style>
-
-    <script type="text/javascript">
-        setTimeout(function() {
-                Push();
-            }, 200);//setTimeout 程序执行后200毫秒执行push，但是仅此一次。execute the function push only one time after the program began to work
-        setInterval(function() {
-                Push();
-            },
-            3000);//三秒后执行 execute it after 3 seconds
-        function Push() {
-            $.ajax({
-                type: 'post',
-                url: 'info',
-                data: {id: 'i need info'},
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-                },
-                success: function (data) {
-                    if (data.status == 1) {
-                        var count = data.count;
-                        var alreadey_count = data.already_count;
-                        $('#count').text(count);
-                        $('#alreadey_count').text(alreadey_count);
-                    }
-                },
-                error: function (xhr, type) {
-                    alert('获取投票信息失败！');
-                }
-            })
-        };
-    </script>
 </head>
 <body>
 
 <div class="top1">
-    <marquee scrollAmount=2 width=300>请谨慎投票！</marquee>
+    <marquee scrollAmount=2 width=300>欢迎您:{{session('realname')}}！</marquee>
 </div>
 <div class="top2">
     <div class="logo">
- <h1>口吐真言投票系统：</h1><p>  当前剩余票数: <span style="color: #990000" id="count"></span>票 已投票数：<span style="color: #990000" id="alreadey_count"></span>票</p>
+ <h1>温馨提醒:为避免数据出现故障，使用本系统前请清除以前的投票数据！</h1>
     </div>
     <div class="fr top-link">
         <a href="#" target="mainCont" title="DeathGhost"><i
-                    class="adminIcon"></i><span>账户：{{session('realname')}}</span></a>
+                    class="adminIcon"></i><span>管理员：{{session('realname')}}</span></a>
     </div>
 </div>
 
@@ -260,12 +229,12 @@
         </div>
         <div class="div3">
             <li><a class="a" href="javascript:void(0);"
-                   onClick="openurl('{{url('list')}}');">开始投票</a></li>
+                   onClick="openurl('{{url('edit')}}');">投票设置</a></li>
             <li><a class="a" href="javascript:void(0);"
                    onClick="openurl('{{url('noteOrder')}}');">投票结果</a></li>
 
         </div>
-        <a class="a1" href="{{url('quit')}}"><div class="div2">
+        <a class="a1" href="{{url('quit_sys')}}"><div class="div2">
                 <div class="tcht"></div>
                 退出系统
             </div></a>
