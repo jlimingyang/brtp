@@ -229,6 +229,8 @@
         </div>
         <div class="div3">
             <li><a class="a" href="javascript:void(0);"
+                  onClick="openurl('');">系统初始化</a></li>
+            <li><a class="a" href="javascript:void(0);"
                    onClick="openurl('{{url('edit')}}');">投票设置</a></li>
             <li><a class="a" href="javascript:void(0);"
                    onClick="openurl('{{url('noteOrder')}}');">投票结果</a></li>

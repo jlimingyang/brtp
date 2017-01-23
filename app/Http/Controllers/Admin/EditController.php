@@ -19,6 +19,6 @@ class EditController extends Controller
     */
    public function edit()
    {
-       echo "开发中！";
+       return view('admin.edit');
    }
 }
