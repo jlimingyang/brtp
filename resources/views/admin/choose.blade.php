@@ -62,14 +62,14 @@
     <tr>
         <th>选项名</th>
         <th>创建时间</th>
-        <th>删除</th>
+        <th>删除选项</th>
     </tr>
     </thead>
     @foreach($data as $k=>$v)
     <tr>
         <td>{{$v->choosename}}</td>
         <td>{{$v->c_time}}</td>
-        <td><a href="#">删除</a></td>
+        <td><a href="{{url('delChoose')}}?id={{$v->id}}">删除</a></td>
     </tr>
 @endforeach
 

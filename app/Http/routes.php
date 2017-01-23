@@ -37,6 +37,8 @@ Route::group(['middleware' => ['web','adminLogin'],'prefix'=>'','namespace'=>'Ad
     Route::post('updateSys','EditController@updateSys'); // 修改系统设置
     Route::get('chooseIndex','EditController@chooseIndex'); // 修改系统设置
     Route::post('addChoose','EditController@addChoose'); // 增加选项
+    Route::get('delChoose','EditController@delChoose'); // 删除选项
+    Route::get('initSys','InitController@initSys'); // 初始化系统
 });
 /*
 |--------------------------------------------------------------------------

@@ -209,7 +209,7 @@
 </div>
 <div class="top2">
     <div class="logo">
- <h1>温馨提醒:为避免数据出现故障，使用本系统前请清除以前的投票数据！</h1>
+ <h1>温馨提醒:使用本系统前请先初始化！在投票未完成前初始化系统会导致统计数据丢失！</h1>
     </div>
     <div class="fr top-link">
         <a href="#" target="mainCont" title="DeathGhost"><i
@@ -229,7 +229,7 @@
         </div>
         <div class="div3">
             <li><a class="a" href="javascript:void(0);"
-                  onClick="openurl('');">系统初始化</a></li>
+                  onClick="openurl('{{url('initSys')}}');">系统初始化</a></li>
             <li><a class="a" href="javascript:void(0);"
                    onClick="openurl('{{url('edit')}}');">初始票数设置</a></li>
             <li><a class="a" href="javascript:void(0);"

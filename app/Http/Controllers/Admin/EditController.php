@@ -80,4 +80,14 @@ class EditController extends Controller
         if(!(new Choose)->addChoose($input['choosename'])){ return back()->with('msg','添加失败！');}
         return redirect('chooseIndex')->with('msg','添加成功！');
    }
+    /**
+     * 删除选项
+     */
+    public function delChoose()
+    {
+        $input = Input::all();
+        if(!(new Choose)->delChoose($input['id'])){return back()->with('msg','删除失败！');}
+        return redirect('chooseIndex')->with('msg','删除成功！');
+    }
+
 }

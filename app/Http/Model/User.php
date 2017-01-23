@@ -107,5 +107,14 @@ class User extends Model
         $user = $this->where('id','!=',1)->orderBy('id','asc')->paginate(8);
         return $user;
     }
+    //初始化票数
+    public function initUser($count)
+    {
+        $data['count'] =$count;
+        $data['left_count'] = $count;
+        $data['c_time'] = date('Y-m-d H:i:s',time());
+        $sta = $this->update($data);
+        return $sta;
+    }
 }
 
