@@ -78,7 +78,7 @@
         @foreach($data as $a=>$b)
             <td>{{$b['count']}}票</td>
         @endforeach
-        <td><a href="placardEdit.html">投票</a></td>
+        <td><a href="{{url('note')}}?id={{$arr->id}}">投票</a></td>
     </tr>
         </center>
 </table>
