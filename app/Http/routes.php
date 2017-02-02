@@ -39,6 +39,8 @@ Route::group(['middleware' => ['web','adminLogin'],'prefix'=>'','namespace'=>'Ad
     Route::post('addChoose','EditController@addChoose'); // 增加选项
     Route::get('delChoose','EditController@delChoose'); // 删除选项
     Route::get('initSys','InitController@initSys'); // 初始化系统
+    Route::get('notePeple','EditController@notePeple'); // 投票人管理
+    Route::get('noteDel','EditController@noteDel'); // 投票人删除
 });
 /*
 |--------------------------------------------------------------------------

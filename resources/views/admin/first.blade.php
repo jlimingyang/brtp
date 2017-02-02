@@ -231,6 +231,8 @@
             <li><a class="a" href="javascript:void(0);"
                   onClick="openurl('{{url('initSys')}}');">系统初始化</a></li>
             <li><a class="a" href="javascript:void(0);"
+                   onClick="openurl('{{url('notePeple')}}');">竞票人管理</a></li>
+            <li><a class="a" href="javascript:void(0);"
                    onClick="openurl('{{url('edit')}}');">初始票数设置</a></li>
             <li><a class="a" href="javascript:void(0);"
                    onClick="openurl('{{url('chooseIndex')}}');">投票选项设置</a></li>

@@ -116,5 +116,12 @@ class User extends Model
         $sta = $this->update($data);
         return $sta;
     }
+    //删除投票人
+    public function delUserById($id)
+    {
+        $where['id'] = $id;
+        $arr = $this->where($where)->where('id','!=',1)->delete();
+        return $arr;
+    }
 }
 

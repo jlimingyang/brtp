@@ -89,5 +89,28 @@ class EditController extends Controller
         if(!(new Choose)->delChoose($input['id'])){return back()->with('msg','删除失败！');}
         return redirect('chooseIndex')->with('msg','删除成功！');
     }
+    /**
+     * 投票人管理
+     */
+    public function notePeple()
+    {
+        $userList = (new User)->userList();
+        return view('admin.notelist',compact('userList'));
+    }
+    /**
+     * 删除
+     */
+    public function noteDel()
+    {
+        $input = Input::all();
+        $sta = (new User)->delUserById($input['id']);
+        if($sta)
+        {
+            return redirect('notePeple')->with('msg','删除成功！');
+        }else
+            {
+                return redirect('notePeple')->with('msg','删除失败！');
+            }
+    }
 
 }
